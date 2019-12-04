@@ -1,0 +1,92 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'src/main/resources/client.ui'
+#
+# Created by: PyQt5 UI code generator 5.11.3
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_mainWindow(object):
+    def setupUi(self, mainWindow):
+        mainWindow.setObjectName("mainWindow")
+        mainWindow.resize(800, 600)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(mainWindow.sizePolicy().hasHeightForWidth())
+        mainWindow.setSizePolicy(sizePolicy)
+        mainWindow.setMinimumSize(QtCore.QSize(800, 600))
+        mainWindow.setBaseSize(QtCore.QSize(800, 600))
+        self.centralwidget = QtWidgets.QWidget(mainWindow)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
+        self.centralwidget.setSizePolicy(sizePolicy)
+        self.centralwidget.setMinimumSize(QtCore.QSize(800, 800))
+        self.centralwidget.setBaseSize(QtCore.QSize(800, 800))
+        self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(9, 9, 781, 531))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.label1 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label1.setObjectName("label1")
+        self.verticalLayout.addWidget(self.label1)
+        self.input = QtWidgets.QTextEdit(self.verticalLayoutWidget)
+        self.input.setObjectName("input")
+        self.verticalLayout.addWidget(self.input)
+        self.label2 = QtWidgets.QLabel(self.verticalLayoutWidget)
+        self.label2.setObjectName("label2")
+        self.verticalLayout.addWidget(self.label2)
+        self.output = QtWidgets.QTextEdit(self.verticalLayoutWidget)
+        self.output.setReadOnly(True)
+        self.output.setObjectName("output")
+        self.verticalLayout.addWidget(self.output)
+        self.buttonbar = QtWidgets.QHBoxLayout()
+        self.buttonbar.setContentsMargins(50, -1, 50, -1)
+        self.buttonbar.setSpacing(50)
+        self.buttonbar.setObjectName("buttonbar")
+        self.button_check = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.button_check.setObjectName("button_check")
+        self.buttonbar.addWidget(self.button_check)
+        self.close = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.close.setObjectName("close")
+        self.buttonbar.addWidget(self.close)
+        self.reset = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.reset.setObjectName("reset")
+        self.buttonbar.addWidget(self.reset)
+        self.verticalLayout.addLayout(self.buttonbar)
+        mainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(mainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
+        self.menubar.setObjectName("menubar")
+        mainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(mainWindow)
+        self.statusbar.setObjectName("statusbar")
+        mainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(mainWindow)
+        self.close.clicked.connect(mainWindow.close)
+        self.reset.clicked.connect(self.input.clear)
+        self.reset.clicked.connect(self.output.clear)
+        self.button_check.clicked.connect(mainWindow.check_language)
+        QtCore.QMetaObject.connectSlotsByName(mainWindow)
+        mainWindow.setTabOrder(self.output, self.reset)
+        mainWindow.setTabOrder(self.reset, self.input)
+        mainWindow.setTabOrder(self.input, self.button_check)
+        mainWindow.setTabOrder(self.button_check, self.close)
+
+    def retranslateUi(self, mainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        mainWindow.setWindowTitle(_translate("mainWindow", "My Language Tool"))
+        self.label1.setText(_translate("mainWindow", "Please provide your text here:"))
+        self.label2.setText(_translate("mainWindow", "Here is your result:"))
+        self.button_check.setText(_translate("mainWindow", "check"))
+        self.close.setText(_translate("mainWindow", "close"))
+        self.reset.setText(_translate("mainWindow", "reset"))
+
