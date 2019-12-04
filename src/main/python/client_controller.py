@@ -1,4 +1,4 @@
-from layout import Ui_mainWindow
+from client_layout import Ui_mainWindow
 from PyQt5.QtWidgets import QMainWindow
 import requests
 
@@ -7,7 +7,7 @@ class Controller(QMainWindow):
     """
     The PyQt controller class, responsible for processing GUI events.
 
-    This class subclasses QMainWindow to work with the layout.py file (which was created from a .ui file using pyuic5).
+    This class subclasses QMainWindow to work with the client_layout.py file (which was created from a .ui file using pyuic5).
     Without subclassing QMainWindow, this class wouldn't have access to the GUI components (such as buttons, input
     fields etc.)
     """
